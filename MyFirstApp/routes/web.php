@@ -12,13 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
+Route::get('home', function () {
+    return view('home.home');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('contact', function () {
+    return view('home.contact',["title"=>"Content page"]);
+});
+
+Route::get('about', function () {
+    $names = ["namal","saman","john"];
+    return view('home.about',["contacts"=>$names]);
 });
