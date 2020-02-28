@@ -25,5 +25,7 @@ Route::get('contact', function () {
 
 Route::get('about', function () {
     $names = ["namal","saman","john"];
-    return view('home.about',["contacts"=>$names]);
+    $title = "About Page";
+    return view('home.about', compact{'names','title'});
 });
+
