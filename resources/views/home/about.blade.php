@@ -6,7 +6,7 @@
 <ul>
 <ul>
 <?php
-  foreach($contacts as $name){
+  foreach($names as $name){
       echo "<li>".$name. "</li>";
   }
 ?>
