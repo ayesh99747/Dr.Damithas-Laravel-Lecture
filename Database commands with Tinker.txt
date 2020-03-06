@@ -1,0 +1,47 @@
+Methods to Insert Data to Database
+Method 1
+$student = new App\Student(["name"=>"John"]);
+$student->save();
+
+Method 2
+App\Student::insert([["name"=>"Jane"],["name"=>"Caseem"]]);
+
+Method 3
+App\Student::insert(["name"=>"Jane"]);
+
+Method 4
+DB::table('students')->insert(["name"=>"meera"]);
+
+Method 5
+DB::insert('insert into students(name) values(?)',['kamal']);
+
+
+
+
+Methods to Query Database
+App\Student::count();
+    Number of records in the students table
+    Students is the model that represent the table students
+    App is the namespace
+App\Student::all();
+    List all records of table students.
+App\Student::limit(3)->orderBy('name')->get();
+    List first 3 records of table students.
+App\Student::select('id','name')->orderBy('name')->get();
+App\Student::where('name','john')->get();
+App\Student::where("id",">",3)->orderBy('name')->get();
+App\Student::find(id);
+
+
+Methods to delete data from a Database
+$student = App\Student::find("name","Saman");
+$student->delete();
+
+App\Student::where("id",">",5)->delete();
+
+
+
+Methods to edit data in a Database
+$student = App\Student::where("name","Saman")->find(1);
+$student->name="Joy";
+$student->save();
