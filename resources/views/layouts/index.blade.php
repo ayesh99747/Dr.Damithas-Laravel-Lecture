@@ -4,10 +4,24 @@
 
 </head>
 <body>
+<div class="links">
+<a href="/">Home</a>
+<a href="/students">Student</a>
+@if(session()->has('message'))
+<div class="alert alert-success">
+    {{session()->get('message')}}
+</div>
+@endif
+</div>
     @yield('content')
-    <h1>About Details</h1>
-    <p>Informatics Institute of Technology</p>
-    <p>email : iit@iit.ac.lk</p>
-    <h1>@yield('header')</h1>
+    @if ($errors->any)())
+    <div class="alert alert-danger">
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{$error}}</li>
+        @endforeach
+    </ul>
+    </div>
+    @endif
 </body>
 </html>

@@ -10,19 +10,24 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::view("/","home.index");
+// Route::view("/","home.index");
 
-Route::get('/', function () {
-    return view('home.welcome');
-});
+// Route::get('/', function () {
+//     return view('home.welcome');
+// });
 
-Route::get('home', function () {
-    return view('home.home');
-});
+// Route::get('home', function () {
+//     return view('home.home');
+// });
 
-Route::get('contact', function () {
-    return view('home.contact',["title"=>"Content page"]);
-});
+// Route::get('contact', function () {
+//     return view('home.contact',["title"=>"Content page"]);
+// });
+
+// Route::get('student', function () {
+//     return view("layouts.index");
+// });
+// Route::resource('students','StudentController');
 
 // Route::get('about', function () {
 //     $names = ["namal","saman","john"];
@@ -36,4 +41,8 @@ Route::get('contact', function () {
 // });
 
 //This calls the function from the Students Controller and passes it into the about.blade.php
-Route::get('about', 'StudentsController@list');
+Route::get("/", function(){ return view("layouts.index");});
+Route::resource('students', 'StudentController');
+
+
+
